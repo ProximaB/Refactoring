@@ -1,4 +1,4 @@
-﻿namespace Refactoring
+﻿namespace Refactoring.Tips
 {
 	public class ReplaceMethodWithMethodObject
 	{

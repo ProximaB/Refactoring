@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 
-namespace Refactoring
+namespace Refactoring.Tips
 {
 	public class ExtractMethodBefore
 	{

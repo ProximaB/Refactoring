@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace Refactoring
+namespace Refactoring.Tips
 {
 	public class SubstituteAlgorithm
 	{

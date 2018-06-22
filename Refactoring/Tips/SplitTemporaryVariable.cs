@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Refactoring
+namespace Refactoring.Tips
 {
 	public class SplitTemporaryVariable
 	{
