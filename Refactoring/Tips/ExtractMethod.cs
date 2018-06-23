@@ -7,7 +7,7 @@ namespace Refactoring.Tips
 	public class ExtractMethodBefore
 	{
 		private string _name;
-		private Order1 _orders;
+		private Order _orders;
 
 		private void PrintOwing()
 		{
@@ -36,7 +36,7 @@ namespace Refactoring.Tips
 	public class ExtractMethodAfter
 	{
 		private string _name;
-		private Order1 _orders;
+		private Order _orders;
 
 		private void PrintOwing()
 		{
@@ -71,16 +71,16 @@ namespace Refactoring.Tips
 		}
 	}
 
-	public class Order1
+	public class Order
 	{
 		public double GetAmount() => 0.1;
 
-		public IEnumerable<Order1> Elements()
+		public IEnumerable<Order> Elements()
 		{
-			yield return new Order1();
-			yield return new Order1();
-			yield return new Order1();
-			yield return new Order1();
+			yield return new Order();
+			yield return new Order();
+			yield return new Order();
+			yield return new Order();
 		}
 	}
 }
