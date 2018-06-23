@@ -16,7 +16,7 @@ namespace Refactoring.Tips
 
 			// print banner
 			Console.WriteLine("**************************");
-			Console.WriteLine("***** Customer Owes ******");
+			Console.WriteLine("***** CustomerBefore Owes ******");
 			Console.WriteLine("**************************");
 
 			// calculate outstanding
@@ -53,7 +53,7 @@ namespace Refactoring.Tips
 		private static void PrintBanner()
 		{
 			Console.WriteLine("**************************");
-			Console.WriteLine("***** Customer Owes ******");
+			Console.WriteLine("***** CustomerBefore Owes ******");
 			Console.WriteLine("**************************");
 		}
 
