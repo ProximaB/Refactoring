@@ -16,7 +16,7 @@ namespace Refactoring.Tips
 
 			// print banner
 			Console.WriteLine("**************************");
-			Console.WriteLine("***** CustomerBefore Owes ******");
+			Console.WriteLine("***** Customer Owes ******");
 			Console.WriteLine("**************************");
 
 			// calculate outstanding
@@ -41,19 +41,19 @@ namespace Refactoring.Tips
 		private void PrintOwing()
 		{
 			PrintBanner();
-			PrintDetails(GetOutstanding());
+			PrintDetails();
 		}
 
-		private void PrintDetails(double outstanding)
+		private void PrintDetails()
 		{
 			Console.WriteLine($"name: {_name}");
-			Console.WriteLine($"amount: {outstanding.ToString(CultureInfo.CurrentCulture)}");
+			Console.WriteLine($"amount: {GetOutstanding().ToString(CultureInfo.CurrentCulture)}");
 		}
 
 		private static void PrintBanner()
 		{
 			Console.WriteLine("**************************");
-			Console.WriteLine("***** CustomerBefore Owes ******");
+			Console.WriteLine("***** Customer Owes ******");
 			Console.WriteLine("**************************");
 		}
 

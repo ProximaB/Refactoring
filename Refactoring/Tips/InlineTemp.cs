@@ -2,15 +2,15 @@
 {
 	public class InlineTemp
 	{
-		public Order2 _order;
+		public Order2 Order;
 
 		public bool InlineTempBefore()
 		{
-			var basePrice = _order.BasePrice();
+			var basePrice = Order.BasePrice();
 			return basePrice > 1000;
 		}
 
-		public bool InlineTempAfter() => _order.BasePrice() > 1000;
+		public bool InlineTempAfter() => Order.BasePrice() > 1000;
 	}
 
 	public class Order2
