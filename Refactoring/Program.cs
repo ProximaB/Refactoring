@@ -8,7 +8,8 @@ namespace Refactoring
 	{
 		public static void Main()
 		{
-			var bench = BenchmarkRunner.Run<SplitTemporaryVariable>();
+			//var bench = BenchmarkRunner.Run<SplitTemporaryVariable>();
+			var bench = BenchmarkRunner.Run<IntroduceExplainingVariable>();
 			Console.ReadKey();
 		}
 	}
