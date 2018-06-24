@@ -1,12 +1,15 @@
 ﻿using System;
+using BenchmarkDotNet.Running;
+using Refactoring.Tips;
 
 namespace Refactoring
 {
-	internal class Program
+	public class Program
 	{
-		private static void Main(string[] args)
+		public static void Main()
 		{
-			Console.WriteLine("Hello World!");
+			var bench = BenchmarkRunner.Run<SplitTemporaryVariable>();
+			Console.ReadKey();
 		}
 	}
 }

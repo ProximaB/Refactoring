@@ -1,4 +1,5 @@
 ﻿using System;
+using BenchmarkDotNet.Attributes;
 
 namespace Refactoring.Tips
 {
@@ -9,7 +10,10 @@ namespace Refactoring.Tips
 		private double _primaryForce;
 		private double _secondaryForce;
 
-		private double GetDistanceTravelledBefore(int time)
+		[Benchmark]
+		[Arguments(1)]
+		[Arguments(10000000)]
+		public double GetDistanceTravelledBefore(int time)
 		{
 			double result;
 			var acc = _primaryForce / _mass;
@@ -27,17 +31,18 @@ namespace Refactoring.Tips
 			return result;
 		}
 
-		private double GetDistanceTravelledAfter(int time)
+		[Benchmark]
+		[Arguments(1)]
+		[Arguments(10000000)]
+		public double GetDistanceTravelledAfter(int time)
 		{
 			if (GetSecondaryTime(time) <= 0) return 0.5 * GetPrimaryAcc() * GetPowerOfPrimaryTime(time);
 
-			return 0.5 * (GetPrimaryAcc() * GetPowerOfPrimaryTime(time) + GetPrimaryVel() * GetSecondaryTime(time) +
-			              GetSecondaryAcc() * GetPowerOfSecondaryTime(time));
+			return 0.5 * GetSecondaryTime(time) * (GetPrimaryAcc() * GetPowerOfPrimaryTime(time) + GetPrimaryVel() +
+			              GetSecondaryAcc() * GetSecondaryTime(time));
 		}
 
-		private double GetPowerOfPrimaryTime(int time) => Math.Pow(GetPrimaryTime(time), 2);
-
-		private double GetPowerOfSecondaryTime(int time) => Math.Pow(GetSecondaryTime(time), 2);
+		private double GetPowerOfPrimaryTime(int time) => GetPrimaryTime(time) * GetPrimaryTime(time);
 
 		private double GetSecondaryAcc() => (_primaryForce + _secondaryForce) / _mass;
 
