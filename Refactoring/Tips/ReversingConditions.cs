@@ -8,7 +8,7 @@
 		private double _intRate;
 		private double ADJ_FACTOR;
 
-		public double GetAdjustedCapitalBefore()
+		public double Before()
 		{
 			var result = 0.0;
 			if (_capital > 0.0)
@@ -17,7 +17,7 @@
 			return result;
 		}
 
-		public double GetAdjustedCapitalAfter()
+		public double After()
 		{
 			if (_capital <= 0.0) return 0.0;
 			if (_intRate <= 0.0 || _duration <= 0.0) return 0.0;
